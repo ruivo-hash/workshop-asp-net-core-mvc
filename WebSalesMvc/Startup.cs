@@ -20,6 +20,7 @@ namespace WebSalesMvc
 
             services.AddScoped<SeedingService>();
             services.AddScoped<SellersService>();
+            services.AddScoped<DepartmentService>();
 
             // Add services to the container.
             services.AddControllersWithViews();
