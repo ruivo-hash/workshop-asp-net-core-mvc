@@ -1,5 +1,6 @@
 ﻿using Microsoft.EntityFrameworkCore;
 using WebSalesMvc.Data;
+using WebSalesMvc.Services;
 
 namespace WebSalesMvc
 {
@@ -18,6 +19,7 @@ namespace WebSalesMvc
                 options.UseMySql(Configuration.GetConnectionString("WebSalesMvcContext"), new MySqlServerVersion(new Version(8, 0, 32))));
 
             services.AddScoped<SeedingService>();
+            services.AddScoped<SellersService>();
 
             // Add services to the container.
             services.AddControllersWithViews();
