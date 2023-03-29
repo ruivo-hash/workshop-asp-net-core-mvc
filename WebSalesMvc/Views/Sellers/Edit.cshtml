@@ -3,16 +3,18 @@
 *@
 
 @model WebSalesMvc.Models.ViewModels.SellerFormViewModel
+
 @{
 }
 
-<h2>Create</h2>
+<h2>Edit</h2>
 
 <h4>Seller</h4>
 <hr />
 <div class="row">
     <div class="col-md-4">
-        <form asp-action="Create">
+        <form asp-action="Edit">
+            <input type="hidden" asp-for="Seller.Id" />
             <div class="form-group">
                 <label asp-for="Seller.Name" class="col-form-label"></label>
                 <input asp-for="Seller.Name" class="form-control" />
@@ -35,7 +37,7 @@
             </div>
             <br />
             <div class="form-group">
-                <input type="submit" value="Create" class="btn btn-primary" />
+                <input type="submit" value="Save" class="btn btn-primary" />
             </div>
         </form>
     </div>
