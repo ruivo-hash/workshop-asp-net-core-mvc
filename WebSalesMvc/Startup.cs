@@ -1,4 +1,6 @@
-﻿using Microsoft.EntityFrameworkCore;
+﻿using Microsoft.AspNetCore.Localization;
+using Microsoft.EntityFrameworkCore;
+using System.Globalization;
 using WebSalesMvc.Data;
 using WebSalesMvc.Services;
 
@@ -28,6 +30,16 @@ namespace WebSalesMvc
 
         public void Configure(WebApplication app)
         {
+            var enUS = new CultureInfo("en-US");
+            var localizationOption = new RequestLocalizationOptions
+            {
+                DefaultRequestCulture = new RequestCulture(enUS),
+                SupportedCultures = new List<CultureInfo> { enUS },
+                SupportedUICultures = new List<CultureInfo> { enUS }
+            };
+
+            app.UseRequestLocalization(localizationOption);
+
             // Configure the HTTP request pipeline.
             if (app.Environment.IsDevelopment())
             {
